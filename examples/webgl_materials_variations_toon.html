@@ -91,7 +91,7 @@
 
 				for ( var alpha = 0, alphaIndex = 0; alpha <= 1.0; alpha += stepSize, alphaIndex ++ ) {
 
-					var specularShininess = Math.pow( 2, alpha * 10 );
+					var specularShininess = Math.pow( 2, alpha * 10 );//返回2的alpha * 10次幂
 
 					for ( var beta = 0; beta <= 1.0; beta += stepSize ) {
 
@@ -110,7 +110,7 @@
 								specular: specularColor,
 								reflectivity: beta,
 								shininess: specularShininess,
-								envMap: alphaIndex % 2 === 0 ? null : reflectionCube
+								envMap: alphaIndex % 2 === 0 ? null : reflectionCube//环境贴图，能被2整除就贴上环境贴图
 							} );
 
 							var mesh = new THREE.Mesh( geometry, material );
